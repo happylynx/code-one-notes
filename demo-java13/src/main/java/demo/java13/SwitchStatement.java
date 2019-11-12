@@ -3,6 +3,7 @@ package demo.java13;
 // "c:\Program Files\Java\jdk-13.0.1\bin\java.exe" --enable-preview --source 13 src\main\java\demo\java13\SwitchStatement.java
 
 // "c:\Program Files\Java\jdk-13.0.1\bin\javac.exe" --enable-preview --source 13 -Xlint:preview src\main\java\demo\java13\SwitchStatement.java
+
 // generates warnings
 // "c:\Program Files\Java\jdk-13.0.1\bin\java.exe" --enable-preview -cp src\main\java demo.java13.SwitchStatement
 
@@ -14,8 +15,11 @@ public class SwitchStatement {
     }
 
     private static int newYieldSwitch() {
+        System.out.println();
+        System.out.println("yield");
+
         final String word = "hello";
-        return switch (word) {
+        final int result = switch (word) {
             case "hello":
                 System.out.println("side effect new yield");
             case "world":
@@ -25,9 +29,13 @@ public class SwitchStatement {
             default:
                 yield 0;
         };
+        return result;
     }
 
     private static int newArrowSwitch() {
+        System.out.println();
+        System.out.println("arrow");
+
         final String word = "hello";
         return switch (word) {
             case "hello", "world" -> 42;
@@ -37,6 +45,9 @@ public class SwitchStatement {
     }
 
     private static int oldSwitch() {
+        System.out.println();
+        System.out.println("old");
+
         final String word = "hello";
         switch (word) {
             case "hello":

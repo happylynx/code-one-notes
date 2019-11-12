@@ -4,13 +4,13 @@ package demo.java13;
 
 public class MultilineString {
     public static void main(String[] args) {
-        trippleDoubleQuote();
+        tripleDoubleQuote();
     }
 
-    private static void trippleDoubleQuote() {
+    private static void tripleDoubleQuote() {
         final String string = """
             <foo>
-                <bar>Hello %s</bar>
+                <bar>Hello world</bar>
             </foo>
         """;
         System.out.println(string);

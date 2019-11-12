@@ -5,10 +5,6 @@ plugins {
 group = "demo"
 version = "1.0-SNAPSHOT"
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_HIGHER
-}
-
 repositories {
     mavenCentral()
 }
@@ -18,5 +14,5 @@ dependencies {
 }
 
 configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_HIGHER
 }
