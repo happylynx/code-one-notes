@@ -3,3 +3,4 @@
 *.pdb
 *.exp
 *.exe
+graal_dumps/
