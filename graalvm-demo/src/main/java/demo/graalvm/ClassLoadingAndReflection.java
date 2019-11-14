@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 c:\Users\jniederm\opt\graalvm\graalvm-ce-19.2.1\bin\javac src\main\java\demo\graalvm\ClassLoadingAndReflection.java src\main\java\demo\graalvm\Hello.java
 c:\Users\jniederm\opt\graalvm\graalvm-ce-19.2.1\bin\java -cp src\main\java;src\main\resources demo.graalvm.ClassLoadingAndReflection
 c:\Users\jniederm\opt\graalvm\graalvm-ce-19.2.1\bin\java -agentlib:native-image-agent=native-image-config -cp src\main\java;src\main\resources demo.graalvm.ClassLoadingAndReflection
-c:\Users\jniederm\opt\graalvm\graalvm-ce-19.2.1\bin\native-image.cmd -H:ConfigurationFileDirectories=native-image-config  -cp src\main\java;src\main\resources -H:Log=registerResource -H:IncludeResources=.*\.txt  demo.graalvm.ClassLoadingAndReflection classLoadingAndReflection
+c:\Users\jniederm\opt\graalvm\graalvm-ce-19.2.1\bin\native-image.cmd -H:ConfigurationFileDirectories=native-image-config  -cp src\main\java;src\main\resources -H:Log=registerResource  demo.graalvm.ClassLoadingAndReflection classLoadingAndReflection
  */
 public class ClassLoadingAndReflection {
     public static void main(String[] args) {
