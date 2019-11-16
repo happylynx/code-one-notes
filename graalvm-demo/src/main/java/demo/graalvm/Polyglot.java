@@ -5,8 +5,8 @@ import org.graalvm.polyglot.*;
 import org.graalvm.polyglot.proxy.*;
 
 /*
-c:\Users\jniederm\opt\graalvm\graalvm-ce-19.2.1\bin\javac src\main\java\demo\graalvm\Polyglot.java
-c:\Users\jniederm\opt\graalvm\graalvm-ce-19.2.1\bin\java -cp src\main\java demo.graalvm.Polyglot
+%GRAALVM_HOME%\bin\javac src\main\java\demo\graalvm\Polyglot.java
+%GRAALVM_HOME%\bin\java -cp src\main\java demo.graalvm.Polyglot
 
 https://www.graalvm.org/docs/reference-manual/embed/
 */

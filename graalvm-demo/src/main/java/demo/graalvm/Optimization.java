@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 import java.util.stream.IntStream;
 
 /*
-c:\Users\jniederm\opt\graalvm\graalvm-ce-19.2.1\bin\javac src\main\java\demo\graalvm\Optimization.java
-c:\Users\jniederm\opt\graalvm\graalvm-ce-19.2.1\bin\java --vm.Dgraal.Dump=:3 --vm.Dgraal.PrintGraph=Network -cp  src\main\java demo.graalvm.Optimization
+%GRAALVM_HOME%\bin\javac src\main\java\demo\graalvm\Optimization.java
+%GRAALVM_HOME%\bin\java --vm.Dgraal.Dump=:3 --vm.Dgraal.PrintGraph=Network -cp  src\main\java demo.graalvm.Optimization
 
 https://www.graalvm.org/docs/reference-manual/tools/#ideal-graph-visualizer
 set jdkhome variable in etc/idealgraphvisualizer.conf to graalvm dir - it requires java 8

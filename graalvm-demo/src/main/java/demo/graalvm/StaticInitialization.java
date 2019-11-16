@@ -3,9 +3,9 @@ package demo.graalvm;
 import java.time.Instant;
 
 /*
-c:\Users\jniederm\opt\graalvm\graalvm-ce-19.2.1\bin\javac src\main\java\demo\graalvm\StaticInitialization.java
-c:\Users\jniederm\opt\graalvm\graalvm-ce-19.2.1\bin\java -cp  src\main\java demo.graalvm.StaticInitialization
-c:\Users\jniederm\opt\graalvm\graalvm-ce-19.2.1\bin\native-image.cmd --initialize-at-build-time=java --initialize-at-build-time=demo -cp src\main\java demo.graalvm.StaticInitialization staticInitialization
+%GRAALVM_HOME%\bin\javac src\main\java\demo\graalvm\StaticInitialization.java
+%GRAALVM_HOME%\bin\java -cp  src\main\java demo.graalvm.StaticInitialization
+%GRAALVM_HOME%\bin\native-image.cmd --initialize-at-build-time=java --initialize-at-build-time=demo -cp src\main\java demo.graalvm.StaticInitialization staticInitialization
  */
 
 public class StaticInitialization {
