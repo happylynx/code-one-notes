@@ -12,8 +12,11 @@ repositories {
     mavenCentral()
 }
 
+// List dependencies: gradlew -q dependencies --configuration compileClasspath
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    implementation(enforcedPlatform("io.helidon:helidon-bom:1.3.1"))
+    implementation(group = "io.helidon.webserver", name = "helidon-webserver")
     testCompile("junit", "junit", "4.12")
 }
 
@@ -24,12 +27,21 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-tasks.register("copyDeps") {
+tasks.register("printClasspath") {
     doLast {
-        println(project.dependencies)
-        tasks.getByName("jar", Jar::class).destinationDirectory.asFile
-        project.configurations.getByName("runtimeClasspath").files.forEach {
-            it.copyTo(it.name, true)
-        }
+        val classpath = tasks.getByName<Jar>("jar")
+            .destinationDirectory
+            .asFile
+            .get()
+            .listFiles()!!
+            .joinToString(separator = System.getProperty("path.separator")) { it.canonicalPath }
+        println(classpath)
     }
+    dependsOn("copyDeps")
+}
+
+tasks.register<Copy>("copyDeps") {
+    into(tasks.getByName("jar", Jar::class).destinationDirectory)
+    from(project.configurations.getByName("runtimeClasspath"))
+    dependsOn("jar")
 }
