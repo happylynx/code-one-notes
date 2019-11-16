@@ -6,7 +6,19 @@ import io.helidon.webserver.WebServer
 import java.util.concurrent.TimeUnit
 
 /*
+TODO
+* simple main to compare package size
+* configurable port
+* serving page+image from resources
+* cdi demo in fallback image
+    * observe process tree of fallback app
+    * does fallback app follow JAVA_HOME?
+* regular native image
+ */
+
+/*
 ..\..\..\opt\graalvm\graalvm-ce-19.2.1\bin\java -cp ... demo.helidonapp.Main
+..\..\..\opt\graalvm\graalvm-ce-19.2.1\bin\native-image -cp ... demo.helidonapp.Main helidonapp
  */
 object Main {
     @JvmStatic
