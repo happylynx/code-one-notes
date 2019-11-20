@@ -1,2 +1,6 @@
 .idea/
 .gradle/
+*.exe
+*.exp
+*.lib
+*.pdb
