@@ -90,7 +90,9 @@ fun createNativeImageCommandLine(): Iterable<String> {
     val appName = if (hasProperty(appNameProperty))
         property(appNameProperty) as String
         else (toAppName(mainClassName) + appNameSuffix)
-    command.add(appName)
+    val nativeImagesDirectory = buildDir.resolve("native-images")
+    nativeImagesDirectory.mkdirs()
+    command.add(nativeImagesDirectory.resolve(appName).canonicalPath)
     return command
 }
 
