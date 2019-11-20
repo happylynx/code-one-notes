@@ -19,6 +19,9 @@ TODO
 /*
 ..\..\..\opt\graalvm\graalvm-ce-19.2.1\bin\java -cp ... demo.helidonapp.Main
 ..\..\..\opt\graalvm\graalvm-ce-19.2.1\bin\native-image -cp ... demo.helidonapp.Main helidonapp
+
+gradlew nativeImage -Pmain=demo.helidonapp.Main
+gradlew nativeImage -Pmain=demo.helidonapp.Main -Pfallback=force
  */
 object Main {
     @JvmStatic
