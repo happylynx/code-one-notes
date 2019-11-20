@@ -83,6 +83,10 @@ fun createNativeImageCommandLine(): Iterable<String> {
     if (forceFallback) {
         command.add("--force-fallback")
     }
+    val nativeImageOptionsProperty = "niOptions"
+    if (hasProperty(nativeImageOptionsProperty)) {
+        command.addAll((property(nativeImageOptionsProperty) as String).split(" "))
+    }
     val mainClassName = property("main") as String
     command.add(mainClassName)
     val appNameProperty = "appName"
