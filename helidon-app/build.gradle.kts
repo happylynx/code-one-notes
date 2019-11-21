@@ -1,3 +1,4 @@
+import java.util.Random
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.nio.file.Path as JavaPath
@@ -58,6 +59,20 @@ tasks {
         doFirst {
             println("Running: ${commandLine.joinToString(" ")}")
         }
+    }
+    val largeFileTask = register("largeFile") {
+        mustRunAfter(processResources)
+        doLast {
+            val dir = processResources.get().destinationDir
+            dir.mkdirs()
+            val largeFile = dir.resolve("large.dat")
+            val data = ByteArray(100 * 1024 * 1024)
+            Random().nextBytes(data)
+            Files.write(largeFile.toPath(), data)
+        }
+    }
+    jar {
+        mustRunAfter(largeFileTask)
     }
 }
 
